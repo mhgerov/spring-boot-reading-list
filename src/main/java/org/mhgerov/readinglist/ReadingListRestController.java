@@ -33,6 +33,6 @@ public class ReadingListRestController {
 	
 	@DeleteMapping("/api")
 	public void deleteBook(@RequestParam Long id) {
-		
+		readingListRepository.deleteById(id);
 	}
 }
