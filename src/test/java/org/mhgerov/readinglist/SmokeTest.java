@@ -16,7 +16,7 @@ public class SmokeTest {
 	private ReadingListController controller1;
 	
 	@Autowired
-	private ReadingListRestController controller2;
+	private ReadingListApiController controller2;
 	
 	@Test
 	public void contextLoads() throws Exception {

@@ -16,6 +16,18 @@ public class Book {
 	private String title;
 	private String author;
 	
+	protected Book() {}
+	
+	public Book(String reader, String isbn, String title, String author, String description) {
+		this.reader = reader;
+		this.isbn = isbn;
+		this.title = title;
+		this.author = author;
+		this.description = description;
+	}
+
+
+
 	private String description;
 	
 	public Long getId() {
