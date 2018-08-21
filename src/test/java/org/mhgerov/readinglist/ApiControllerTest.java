@@ -16,7 +16,7 @@ import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilde
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(ReadingListApiController.class)
-public class RestControllerTest {
+public class ApiControllerTest {
 	
 	@Autowired
 	private MockMvc mockMvc;
