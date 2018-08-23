@@ -1,0 +1,18 @@
+[
+	{
+		"id":1,
+		"reader":"john",
+		"isbn":"978-3-16-148410-0",
+		"title":"Dunkirk: The Novel",
+		"author":"Chris Nolan",
+		"description":"The book we deserve!"
+	},
+	{
+		"id":2,
+		"reader":"john",
+		"isbn":"978-3-16-148410-1",
+		"title":"Dunkirk 2: Return to Normandy",
+		"author":"Chris Nolan",
+		"description":"The book we don't need"
+	}
+]

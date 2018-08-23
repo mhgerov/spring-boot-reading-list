@@ -10,17 +10,13 @@ import org.junit.Test;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class SmokeTest {
-	
-	@Autowired
-	private ReadingListController controller1;
+public class SmokeTest {	
 	
 	@Autowired
 	private ReadingListApiController controller2;
 	
 	@Test
 	public void contextLoads() throws Exception {
-		assertThat(controller1).isNotNull();
 		assertThat(controller2).isNotNull();
 	}
 }
