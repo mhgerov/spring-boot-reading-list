@@ -48,9 +48,11 @@ public class ApiControllerTest {
 		
 		JSONArray expected = new JSONArray(readJSON("src/test/java/johnsBooks.json"));
 		
+		//Create request and extract response
 		MockHttpServletResponse response = this.mockMvc.perform(get("/api?reader=john")).andReturn().getResponse();
 		JSONArray returned = new JSONArray(response.getContentAsString());
 		
+		//Assert that JSON objects are equal non-strict
 		JSONAssert.assertEquals(expected,returned,false);
 		
 	}
