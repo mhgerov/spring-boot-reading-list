@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:int="http://www.springframework.org/schema/integration"
+	xmlns:int-http="http://www.springframework.org/schema/integration/http"
+	xsi:schemaLocation="http://www.springframework.org/schema/integration/feed http://www.springframework.org/schema/integration/feed/spring-integration-feed.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/integration/file http://www.springframework.org/schema/integration/file/spring-integration-file.xsd
+		http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration.xsd">
+		
+	<int:gateway service-interface="org.mhgerov.readinglist.ReadingListGateway"  >
+		<int:method name="getReadingList" request-channel="getListChannel"/>
+		<int:method name="addBook" request-channel="addBookChannel"/>
+		<int:method name="deleteBook" request-channel="deleteBookChannel"/>
+	</int:gateway>
+	
+	<int:channel id="addBookChannel"/>
+	
+	<int:service-activator 
+		input-channel="addBookChannel"
+		ref="bookDatabaseService" 
+		method="saveBook"/>
+		
+		<int:channel id="getListChannel"/>
+	
+	<int:service-activator 
+		input-channel="getListChannel"
+		ref="bookDatabaseService" 
+		method="getListByReader"/>
+		
+		<int:channel id="deleteBookChannel"/>
+	
+	<int:service-activator 
+		input-channel="deleteBookChannel"
+		ref="bookDatabaseService" 
+		method="deleteBook"/>
+ 
+
+</beans>

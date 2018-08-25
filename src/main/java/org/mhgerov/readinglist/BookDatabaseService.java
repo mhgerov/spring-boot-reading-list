@@ -13,15 +13,15 @@ public class BookDatabaseService {
 		this.readingListRepository = readingListRepository;
 	}
 	
-	void saveBook(Book book) {
+	public void saveBook(Book book) {
 		readingListRepository.save(book);
 	}
 	
-	List<Book> getListByReader(String reader) {
+	public List<Book> getListByReader(String reader) {
 		return readingListRepository.findByReader(reader);
 	}
 	
-	void deleteBook(Long id) {
+	public void deleteBook(long id) {
 		readingListRepository.deleteById(id);
 	}
 	
