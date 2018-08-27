@@ -22,8 +22,8 @@ public class ReadingListApiController {
 
 	@PostMapping("/api")
 	@ResponseStatus(HttpStatus.CREATED)
-	public void addBook(@RequestBody final Book book) {
-		this.readingListGateway.addBook(book);
+	public long addBook(@RequestBody final Book book) {
+		return this.readingListGateway.addBook(book);
 	}
 
 	@GetMapping("/api")
