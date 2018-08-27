@@ -2,11 +2,13 @@ package org.mhgerov.readinglist;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class BookDatabaseService {
 
+	@Autowired
 	private final ReadingListRepository readingListRepository;
 
 	public BookDatabaseService(final ReadingListRepository readingListRepository) {
