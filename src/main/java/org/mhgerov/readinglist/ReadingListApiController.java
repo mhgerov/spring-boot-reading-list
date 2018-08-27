@@ -18,8 +18,6 @@ public class ReadingListApiController {
 	@Autowired
 	private ReadingListGateway readingListGateway;
 
-	// private final BookDatabaseService bookDatabaseService;
-
 	@PostMapping("/api")
 	@ResponseStatus(HttpStatus.CREATED)
 	public long addBook(@RequestBody final Book book) {
@@ -28,7 +26,6 @@ public class ReadingListApiController {
 
 	@GetMapping("/api")
 	public List<Book> getBookList(@RequestParam final String reader) {
-		// return bookDatabaseService.getListByReader(reader);
 		return this.readingListGateway.getReadingList(reader);
 
 	}
