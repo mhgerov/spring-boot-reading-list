@@ -36,8 +36,10 @@ public class BookDatabaseServiceTest {
 		this.bookDatabaseService.saveBook(book1);
 		this.bookDatabaseService.saveBook(book2);
 
-		assertEquals(book1.getTitle(), this.bookDatabaseService.getListByReader("john").get(0).getTitle());
-		assertEquals(book2.getIsbn(), this.bookDatabaseService.getListByReader("john").get(1).getIsbn());
+		final List<Book> retrieved = this.bookDatabaseService.getListByReader("john");
+
+		assertEquals(book1.getTitle(), retrieved.get(0).getTitle());
+		assertEquals(book2.getIsbn(), retrieved.get(1).getIsbn());
 
 	}
 }
